@@ -11,7 +11,7 @@
 
 .app-icon {
   width: 100px;
-  height: 100px;
+  height: auto;
   background-image: url('https://brinnovations.github.io/images/BrajkishorRathod.png');
   background-size: cover;
   background-position: center;
