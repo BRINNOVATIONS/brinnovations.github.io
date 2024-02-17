@@ -1,9 +1,3 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .app-card {
   width: auto;
   height: auto;
