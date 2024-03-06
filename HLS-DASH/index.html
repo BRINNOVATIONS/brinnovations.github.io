@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <div class="card">
+        <label for="manifestUri">Manifest URI:</label><br>
+        <input type="text" id="manifestUri" name="manifestUri" value="https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd"><br>
+        
+        <label for="keyId">Key ID:</label><br>
+        <input type="text" id="keyId" name="keyId" value="ae26845bd33038a9c0774a0981007294"><br>
+        
+        <label for="key">Key:</label><br>
+        <input type="text" id="key" name="key" value="63ac662dde310cfb4cc6f9b43b34196d"><br>
+        
+        <button id="loadButton" onclick="loadVideo()">Load Video</button>
+    </div>
+
+    <script>
+        function loadVideo() {
+            const manifestUri = document.getElementById('manifestUri').value;
+            const keyId = document.getElementById('keyId').value;
+            const key = document.getElementById('key').value;
+            
+            // Redirect to the player page with query parameters
+            window.location.href = `player.html?manifestUri=${encodeURIComponent(manifestUri)}&keyId=${encodeURIComponent(keyId)}&key=${encodeURIComponent(key)}`;
+        }
+    </script>
+</body>
+</html>
