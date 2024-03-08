@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homepage</title>
+    <style>
+        /* Custom CSS for input text boxes and button */
+        .card {
+            border-radius: 8px;
+            background-color: #f3f3f3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+        
+        #manifestUri, #keyId, #key {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        
+        #loadButton {
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        #loadButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <label for="manifestUri">Manifest URI:</label><br>
+        <input type="text" id="manifestUri" name="manifestUri" value="https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd"><br>
+        
+        <label for="keyId">Key ID:</label><br>
+        <input type="text" id="keyId" name="keyId" value="ae26845bd33038a9c0774a0981007294"><br>
+        
+        <label for="key">Key:</label><br>
+        <input type="text" id="key" name="key" value="63ac662dde310cfb4cc6f9b43b34196d"><br>
+        
+        <button id="loadButton" onclick="loadVideo()">Load Video</button>
+    </div>
+
+    <script>
+        function loadVideo() {
+            const manifestUri = encodeURIComponent(document.getElementById('manifestUri').value);
+            const keyId = encodeURIComponent(document.getElementById('keyId').value);
+            const key = encodeURIComponent(document.getElementById('key').value);
+            window.location.href = `player.html?manifestUri=${manifestUri}&keyId=${keyId}&key=${key}`;
+        }
+    </script>
+</body>
+</html>
