@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Player</title>
+    <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.7.1/dist/shaka-player.ui.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@4.7.1/dist/controls.min.css">
+    <style>
+        body {
+            width:100%;
+            height: 100%;
+            font-family: Poppins;
+            display:block;
+            position: absolute;
+            padding: 0px;
+            margin: 0px;
+            background: #fff;
+        }
+        
+        video {
+            width:100%;
+            height: 100%;
+            display:inline-block;
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+        }
+        
+        a, a:hover, a:focus, a:active {
+          text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <center>   
+        <div data-shaka-player-container style="max-width:100em" data-shaka-player-cast-receiver-id="1BA79154">
+            <!-- The data-shaka-player tag will make the UI library use this video element.
+            If no video is provided, the UI will automatically make one inside the container div. -->
+            <video autoplay data-shaka-player id="video" poster="" style="width:100%;height:100%"></video>
+        </div>
+    </center>
+
+    <script>
+    async function loadVideo() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const manifestUri = decodeURIComponent(urlParams.get('manifestUri'));
+        const keyId = decodeURIComponent(urlParams.get('keyId'));
+        const key = decodeURIComponent(urlParams.get('key'));
+        
+        const video = document.getElementById('video');
+        const ui = video['ui'];
+        const controls = ui.getControls();
+        const player = controls.getPlayer();
+        const config = {
+            'controlPanelElements': ['play_pause', 'time_and_duration', 'spacer', 'mute', 'picture_in_picture', 'playback_rate', 'quality', 'fullscreen'],
+            'playbackRates': [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2],
+        };
+        ui.configure(config);
+        player.configure({
+            drm: {
+                clearKeys: {
+                    [keyId]: key,
+                }
+            }
+        });
+
+        window.player = player;
+        window.ui = ui;
+
+        player.addEventListener('error', onPlayerErrorEvent);
+        controls.addEventListener('error', onUIErrorEvent);
+
+        try {
+            await player.load(manifestUri);
+            console.log('The video has now been loaded!');
+        } catch (error) {
+            onPlayerError(error);
+        }
+    }
+
+    function onPlayerErrorEvent(errorEvent) {
+        onPlayerError(event.detail);
+    }
+
+    function onPlayerError(error) {
+        console.error('Error code', error.code, 'object', error);
+    }
+
+    function onUIErrorEvent(errorEvent) {
+        onPlayerError(event.detail);
+    }
+
+    function initFailed(errorEvent) {
+        console.error('Unable to load the UI library!');
+    }
+
+    document.addEventListener('DOMContentLoaded', loadVideo);
+    </script>
+</body>
+</html>
