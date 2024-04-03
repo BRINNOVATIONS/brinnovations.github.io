@@ -14,4 +14,4 @@ if(testUserAgent.search("Vinebre")>=0||
 else if(isTesting&&gameInTesting.indexOf(gameName)>=0)
 	alert("Testing. This should be redirect");
 else
-	window.location.href = "http://games.e-droid.net/en/common/access-denied.html";
+	window.location.href = "https://brinnovations.github.io/Tetris/access-denied.html";
