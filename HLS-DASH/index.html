@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AirmobTVHD Stream - Input</title>
+    <title>AirmobTVHD HLS/DASH Player</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -59,18 +59,18 @@
     </style>
 </head>
 <body>
-    <h1>AirmobTVHD Player</h1>
+    <h1>AirmobTVHD HLS/DASH Player</h1>
     <form action="player.html" method="GET">
-        <label for="mpdUrl">MPD URL:</label>
-        <input type="text" id="mpdUrl" name="url" placeholder="Enter MPD URL" required>
+        <label for="streamUrl">Stream URL (M3U8 or MPD):</label>
+        <input type="text" id="streamUrl" name="url" placeholder="Enter M3U8 or MPD URL" required>
         
-        <label for="keyId">Key ID:</label>
-        <input type="text" id="keyId" name="keyId" placeholder="Enter Key ID" required>
+        <label for="keyId">Key ID (optional):</label>
+        <input type="text" id="keyId" name="keyId" placeholder="Enter Key ID">
         
-        <label for="key">Key:</label>
-        <input type="text" id="key" name="key" placeholder="Enter Key" required>
+        <label for="key">Key (optional):</label>
+        <input type="text" id="key" name="key" placeholder="Enter Key">
         
-        <input type="submit" value="Load Streaming">
+        <input type="Load Streaming" value="Stream">
     </form>
 </body>
 </html>
