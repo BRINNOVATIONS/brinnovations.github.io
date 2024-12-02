@@ -29,11 +29,18 @@
  
 <!--Space-->
 <link rel="stylesheet" href="css/space.css">
+
+<!--Space-->
+<link rel="stylesheet" href="css/loader.css">
  
 <!-- Favicon-->
 <link rel="shortcut icon" href="images/favicon.png">
 </head>
 <body>
+ <div id="loader">
+  <div id="stringPreloader"></div>
+ </div>
+ 
 <!-- navbar-->
 <header class="header">
 <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
@@ -49,6 +56,7 @@
 </div>
 </nav>
 </header>
+ 
 <!-- Hero Section-->
 <section class="hero bg-top py-5" id="hero" style="background: url(img/banner-4.png) no-repeat; background-size: 100% 80%">
 <div class="container py-5">
@@ -150,5 +158,12 @@ document.body.insertBefore(div, document.body.childNodes[0])
 // pls don't forget to change to your domain :)
 injectSvgSprite('');
 </script>
+
+ <script>
+  window.addEventListener("load", function () {
+    document.getElementById("loader").style.display = "none";
+  });
+ </script>
+ 
 <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
