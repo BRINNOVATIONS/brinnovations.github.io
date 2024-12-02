@@ -162,16 +162,5 @@ document.body.insertBefore(div, document.body.childNodes[0])
 // pls don't forget to change to your domain :)
 injectSvgSprite('');
 </script>
-<script>
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    const content = document.querySelector('.content');
-    
-    setTimeout(() => {
-        preloader.style.display = 'none';
-        content.style.display = 'block';
-    }, 4000); // 4 seconds delay
-});
-</script>
 <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
