@@ -28,7 +28,7 @@
 .loader-gif {
     margin-top: 15px;  /* Adds space below the loader image */
     width: 100px;
-    height: 100px;
+    height: 40px;
 }
 
 /* Bounce and Fade animation */
