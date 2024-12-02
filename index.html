@@ -30,16 +30,20 @@
 <!--Space-->
 <link rel="stylesheet" href="css/space.css">
 
-<!--Space-->
+<!--Loader-->
 <link rel="stylesheet" href="css/loader.css">
  
 <!-- Favicon-->
 <link rel="shortcut icon" href="images/favicon.png">
 </head>
 <body>
- <div id="loader">
-  <div id="stringPreloader"></div>
- </div>
+    <div id="preloader">
+        <div class="loader-container">
+            <img src="https://brinnovations.github.io/images/favicon.png" alt="Loader Image" class="loader-image">
+            <img src="https://brinnovations.github.io/images/6182102.gif" alt="Loading GIF" class="loader-gif">
+        </div>
+    </div>
+    <div class="content">
  
 <!-- navbar-->
 <header class="header">
@@ -159,13 +163,15 @@ document.body.insertBefore(div, document.body.childNodes[0])
 injectSvgSprite('');
 </script>
 <script>
-  window.addEventListener("load", function () {
-    const loader = document.getElementById("loader");
-    loader.style.opacity = "0"; // Fade out effect
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    const content = document.querySelector('.content');
+    
     setTimeout(() => {
-      loader.style.display = "none"; // Hide after fade out
-    }, 500); // Adjust time for fade-out effect (500ms)
-  });
+        preloader.style.display = 'none';
+        content.style.display = 'block';
+    }, 4000); // 4 seconds delay
+});
 </script>
 <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
