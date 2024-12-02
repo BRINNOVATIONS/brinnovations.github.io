@@ -1,32 +1,61 @@
-/* Preloader Container */
-  #loader {
+/* Preloader styles */
+#preloader {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
-    background: #fff;
-    z-index: 99999;
+    height: 100%;
+    background-color: #f4f4f4;
     display: flex;
-    align-items: center;
     justify-content: center;
-  }
+    align-items: center;
+    z-index: 9999;
+}
 
-  /* Spinner Animation */
-  #stringPreloader {
-    width: 70px;
-    height: 70px;
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
-    border-radius: 50%;
-    animation: spinner 1.5s linear infinite;
-  }
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-  @keyframes spinner {
+.loader-image {
+    width: 80px;
+    height: 80px;
+    animation: fadeBounce 1.5s ease-in-out infinite; /* Apply both fade and bounce animation */
+}
+
+.loader-gif {
+    margin-top: 15px;  /* Adds space below the loader image */
+    width: 100px;
+    height: 100px;
+}
+
+/* Bounce and Fade animation */
+@keyframes fadeBounce {
     0% {
-      transform: rotate(0deg);
+        transform: translateY(0); /* Start at original position */
+        opacity: 1;
+    }
+    30% {
+        transform: translateY(-10px); /* Move up */
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(0); /* Return to original position */
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(-5px); /* Slight bounce */
+        opacity: 0.9;
     }
     100% {
-      transform: rotate(360deg);
+        transform: translateY(0); /* Return to original position */
+        opacity: 1;
     }
-  }
+}
+
+/* Hide content initially */
+.content {
+    display: none;
+}
