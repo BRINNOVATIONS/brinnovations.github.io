@@ -7,27 +7,6 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
-
- <script>
-    // Load loader HTML
-    fetch('index.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('loader-placeholder').innerHTML = html;
-        })
-        .catch(err => console.error('Failed to load loader:', err));
-
-    // Add Preloader Styles
-    const loaderStyle = document.createElement('link');
-    preloaderStyle.rel = 'stylesheet';
-    preloaderStyle.href = 'loader.css';
-    document.head.appendChild(loaderStyle);
-
-    // Add Preloader Script
-    const loaderScript = document.createElement('script');
-    preloaderScript.src = 'loader.js';
-    document.body.appendChild(loaderScript);
- </script>
  
 <!-- Swiper slider-->
 <link rel="stylesheet" href="css/swiper-bundle.min.css">
@@ -58,7 +37,7 @@
 <link rel="shortcut icon" href="images/favicon.png">
 </head>
 <body>
-    <div id="loader">
+    <div id="preloader">
     <div class="loader-container">
         <!-- Favicon Loader -->
         <img src="images/favicon.png" alt="Loading" class="loader-image">
@@ -73,7 +52,6 @@
         </div>
     </div>
     </div>
-  <div id="loader-placeholder"></div>
 <!-- navbar-->
 <header class="header">
 <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
