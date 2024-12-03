@@ -9,24 +9,24 @@
 <meta name="robots" content="all,follow">
 
  <script>
-    // Load Preloader HTML
-    fetch('preloader.html')
+    // Load loader HTML
+    fetch('loader.html')
         .then(response => response.text())
         .then(html => {
-            document.getElementById('preloader-placeholder').innerHTML = html;
+            document.getElementById('loader-placeholder').innerHTML = html;
         })
-        .catch(err => console.error('Failed to load preloader:', err));
+        .catch(err => console.error('Failed to load loader:', err));
 
     // Add Preloader Styles
-    const preloaderStyle = document.createElement('link');
+    const loaderStyle = document.createElement('link');
     preloaderStyle.rel = 'stylesheet';
-    preloaderStyle.href = 'preloader.css';
-    document.head.appendChild(preloaderStyle);
+    preloaderStyle.href = 'loader.css';
+    document.head.appendChild(loaderStyle);
 
     // Add Preloader Script
-    const preloaderScript = document.createElement('script');
-    preloaderScript.src = 'preloader.js';
-    document.body.appendChild(preloaderScript);
+    const loaderScript = document.createElement('script');
+    preloaderScript.src = 'loader.js';
+    document.body.appendChild(loaderScript);
  </script>
  
 <!-- Swiper slider-->
@@ -58,7 +58,7 @@
 <link rel="shortcut icon" href="images/favicon.png">
 </head>
 <body>
-    <div id="preloader">
+    <div id="loader">
     <div class="loader-container">
         <!-- Favicon Loader -->
         <img src="images/favicon.png" alt="Loading" class="loader-image">
