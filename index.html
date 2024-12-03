@@ -7,6 +7,27 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
+
+ <script>
+    // Load Preloader HTML
+    fetch('preloader.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('preloader-placeholder').innerHTML = html;
+        })
+        .catch(err => console.error('Failed to load preloader:', err));
+
+    // Add Preloader Styles
+    const preloaderStyle = document.createElement('link');
+    preloaderStyle.rel = 'stylesheet';
+    preloaderStyle.href = 'preloader.css';
+    document.head.appendChild(preloaderStyle);
+
+    // Add Preloader Script
+    const preloaderScript = document.createElement('script');
+    preloaderScript.src = 'preloader.js';
+    document.body.appendChild(preloaderScript);
+ </script>
  
 <!-- Swiper slider-->
 <link rel="stylesheet" href="css/swiper-bundle.min.css">
@@ -38,13 +59,21 @@
 </head>
 <body>
     <div id="preloader">
-        <div class="loader-container">
-            <img src="https://brinnovations.github.io/images/favicon.png" alt="Loader Image" class="loader-image">
-            <img src="https://brinnovations.github.io/images/6182102.gif" alt="Loading GIF" class="loader-gif">
+    <div class="loader-container">
+        <!-- Favicon Loader -->
+        <img src="images/favicon.png" alt="Loading" class="loader-image">
+        
+        <!-- Dotted Loader -->
+        <div class="loading">
+            <span class="loading__dot"></span>
+            <span class="loading__dot"></span>
+            <span class="loading__dot"></span>
+            <span class="loading__dot"></span>
+            <span class="loading__dot"></span>
         </div>
     </div>
-    <div class="content">
- 
+    </div>
+  <div id="loader-placeholder"></div>
 <!-- navbar-->
 <header class="header">
 <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
