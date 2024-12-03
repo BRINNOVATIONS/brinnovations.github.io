@@ -1,9 +1,7 @@
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    const content = document.querySelector('.content');
-    
+// Hide loader and show content after 3.5 seconds
+document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
-        preloader.style.display = 'none';
-        content.style.display = 'block';
-    }, 4000); // 4 seconds delay
+        const loader = document.getElementById('loader');
+        if (loader) loader.style.display = 'none'; // Hide loader
+    }, 3500); // 3.5 seconds
 });
