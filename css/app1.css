@@ -10,7 +10,6 @@
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    box-sizing: border-box;
 }
 
 .loader-container {
@@ -80,65 +79,81 @@
     display: none;
 }
 
+
 /* Project styles */
-.app-card, .app-card1 {
-    width: auto;
-    height: auto;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: #fff;
-    text-align: center;
-}
-
 .app-card {
-    background: linear-gradient(135deg, #4CBB17, #008000);
-}
-
-.app-card1 {
-    background: linear-gradient(135deg, #F79256, #DC84EC);
-}
-
-.app-icon, .app-icon1 {
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    background-position: center;
-    margin: 0 auto 20px;
-    border-radius: 50%;
+  width: auto;
+  height: auto;
+  background: linear-gradient(135deg, #4CBB17, #008000);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  text-align: center;
 }
 
 .app-icon {
-    background-image: url('https://brinnovations.github.io/images/KidStudy.png');
-}
+  width: 100px;
+  height: 100px;
+  background-image: url('https://brinnovations.github.io/images/KidStudy.png');
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+}p
 
-.app-icon1 {
-    background-image: url('https://brinnovations.github.io/images/Gameesole.png');
-}
-
-.app-card h2, .app-card1 h2 {
-    margin-bottom: 10px;
-}
-
-.btn, .btn1 {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #FFFFFF;
-    border: 2px solid #FFFFFF;
-    border-radius: 2px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+.app-card h2 {
+  margin-bottom: 10px;
 }
 
 .btn {
-    background: linear-gradient(135deg, #4CBB17, #008000);
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #4CBB17, #008000);
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF; /* Added border property */
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.app-card1 {
+  width: auto;
+  height: auto;
+  background: linear-gradient(135deg, #F79256, #Dc84ecff);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  text-align: center;
+}
+
+.app-icon1 {
+  width: 100px;
+  height: 100px;
+  background-image: url('https://brinnovations.github.io/images/Gameesole.png');
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+}
+
+.app-card1 h2 {
+  margin-bottom: 10px;
 }
 
 .btn1 {
-    background: linear-gradient(135deg, #F79256, #DC84EC);
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #F79256, #Dc84ecff);
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF; /* Added border property */
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-/* Card styles */
+
 .card {
     margin: 0 auto;
     padding: 2em;
@@ -149,11 +164,11 @@
     position: relative;
     color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
 }
 
+/* Add spacing between cards */
 .row > div {
-    margin-bottom: 2rem;
+    margin-bottom: 2rem; /* Add spacing below each card */
 }
 
 .card img {
@@ -179,7 +194,7 @@
     z-index: -1;
     padding: 3px;
     border-radius: 10px;
-    animation: spin 3s linear infinite;
+    animation: 3s spin linear infinite;
 }
 
 .card::before {
