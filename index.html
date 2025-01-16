@@ -1,152 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="BRINNOVATIONS - Your one-stop destination for website and Android app development solutions.">
-    <meta name="robots" content="all,follow">
-    <title>BRINNOVATIONS</title>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.png">
-
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,600,800&amp;display=swap">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/modal-video.min.css">
-    <link rel="stylesheet" href="css/device-mockups.css">
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
-    <link rel="stylesheet" href="css/app1.css">
-    <link rel="stylesheet" href="css/app2.css">
-    <link rel="stylesheet" href="css/about.css">
-    <link rel="stylesheet" href="css/space.css">
-    <link rel="stylesheet" href="css/preloader.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Theme Bootstrap Website</title>
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    a {
+      color: #0d6efd;
+    }
+    footer {
+      background-color: #1a1a1a;
+      color: #bbbbbb;
+      padding: 20px 0;
+      text-align: center;
+    }
+    footer a {
+      color: #bbbbbb;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader-container">
-            <img src="images/favicon.png" alt="Loading" class="loader-image">
-            <div class="loading">
-                <span class="loading__dot"></span>
-                <span class="loading__dot"></span>
-                <span class="loading__dot"></span>
-                <span class="loading__dot"></span>
-                <span class="loading__dot"></span>
-            </div>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="/">
+        <img src="https://brinnovations.github.io/images/favicon.png" alt="Logo" width="30" height="30" class="me-2">
+        Dark Theme Website
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <!-- Navigation Header -->
-    <header class="header">
-        <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/Header.png" alt="BRINNOVATIONS Logo" height="40" width="200">
-                </a>
-                <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link link-scroll active" href="">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link-scroll" href="/PrivacyPolicy.html">Privacy Policy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link-scroll" href="/KidStudy">KidStudy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+  <main class="container my-4">
+    <h1>Welcome to the Dark Theme Website</h1>
+    <p>This is a simple dark-themed Bootstrap template. Feel free to customize it as needed.</p>
+    <button class="btn btn-primary">Get Started</button>
+  </main>
 
-    <!-- Hero Section -->
-    <main>
-        <section class="hero bg-top py-5" id="hero" style="background: url(img/banner-4.png) no-repeat; background-size: cover;">
-            <div class="container py-5">
-                <div class="row py-5">
-                    <div class="col-lg-5 py-5">
-                        <h1>
-                            BRINNOVATIONS is your one-stop destination for website and Android app development solutions. From concept to execution, our expert team specializes in crafting bespoke websites and intuitive Android applications tailored to your unique needs. Partner with us for seamless development, innovative design, and unparalleled customer satisfaction.
-                        </h1>
-                    </div>
-            </div>
-        </section>
-        <div class="col-lg-12 text-center">
-                        <h2>Our Projects</h2>
-        </div>
-        <!-- Projects -->
-        <section class="projects py-5">
-            <div class="container">
-                <!-- KidStudy Project -->
-                <div class="app-card">
-                    <div class="app-icon"></div>
-                    <h2>KidStudy</h2>
-                    <p>KidStudy is a smart learning app designed to engage and educate children in a fun and interactive way. With its user-friendly interface and diverse educational content, KidStudy stands out as one of the premier applications for kids' learning. From math and language skills to science and art, KidStudy covers a wide range of subjects, catering to various learning styles and interests. With engaging activities, games, and quizzes, children can explore and absorb new concepts effortlessly. Parents can track their child's progress and customize their learning experience to ensure optimal growth and development. With KidStudy, learning becomes an exciting adventure for young minds.</p>
-                    <a href="KidStudy" class="btn">Download</a>
-                </div>
-                <div class="space"></div>
-                <!-- Gameesole Project -->
-                <div class="app-card1">
-                    <div class="app-icon1"></div>
-                    <h2>Gameesole</h2>
-                    <p>Gameesole is a mobile app developed by ZEXXA Innovations that offers users the opportunity to earn money through various activities such as playing games, scratch cards, referring friends, and watching videos. This innovative platform combines entertainment with earning potential, making it an attractive option for those looking to make some extra income while having fun. By engaging in different activities within the Gameesole app, users can accumulate points or rewards that can be converted into real money or gift cards. Gameesole provides a user-friendly interface and a wide range of games and activities to cater to different interests and preferences. With its unique concept of combining gaming with earning opportunities, Gameesole has gained popularity among users seeking a fun and rewarding experience on their mobile devices. Whether you enjoy playing games, testing your luck with scratch cards, or simply watching videos, Gameesole offers a diverse range of options to help you earn money in an engaging and enjoyable way.</p>
-                    <a href="https://gameesole.github.io/" class="btn1">Download</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about py-5" id="about" style="background: url(img/service-bg.svg) no-repeat; background-size: cover;">
-    <div class="container text-center">
-        <h2 class="text-white mb-5">About Us</h2>
-        <div class="row justify-content-center">
-            <!-- Card 1 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="images/BrajkishorRathod.png" alt="Brajkishor Rathod" class="rounded-circle mb-3" width="100" height="100">
-                    <h3>Brajkishor Rathod</h3>
-                    <p>CEO & Founder of BRINNOVATIONS</p>
-                </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="images/ShubhamGupta.png" alt="Shubham Gupta" class="rounded-circle mb-3" width="100" height="100">
-                    <h3>Shubham Gupta</h3>
-                    <p>CEO & Founder of ZEXXA Innovations</p>
-                </div>
-            </div>
-        </div>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 YourWebsiteName. All rights reserved. Designed by <a href="https://yourwebsite.com">YourName</a>.</p>
     </div>
-        </section>
-    </main>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container py-4 text-center">
-            <ul class="list-inline mb-3">
-                <li class="list-inline-item"><a href="PrivacyPolicy.html">Privacy Policy</a></li>
-                <li class="list-inline-item"><a href="ContactUs.html">Contact Us</a></li>
-            </ul>
-            <p class="text-muted mb-0">&copy; 2024 BRINNOVATIONS. Made with ❤️ in India.</p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/modal-video.js"></script>
-    <script src="js/front.js"></script>
-    <script src="js/preloader.js"></script>
-    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
