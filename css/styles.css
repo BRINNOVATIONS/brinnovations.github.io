@@ -29,8 +29,7 @@ footer {
 footer a:hover {
     text-decoration: underline;
 }
-
-/* Gradient Effect for Anime-Inspired Navbar */
+/* Gradient Effect for Navbar */
 .navbar {
     position: relative;
 }
@@ -41,19 +40,7 @@ footer a:hover {
     left: 0;
     width: 100%;
     height: 5px; /* Adjust the height of the gradient */
-    background: linear-gradient(to right, #ff0066, #ffcc00, #00b3ff, #ff00ff, #00ffcc);
-    background-size: 200% 100%;
-    animation: gradient-animation 5s linear infinite;
-}
-
-/* Animation for smooth color transition */
-@keyframes gradient-animation {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 100% 0;
-    }
+    background: linear-gradient(to right, #ff4545, #00ff99, #006aff, #ff0095, #ff4545); /* Gradient colors */
 }
 
 /* Preloader styles */
@@ -225,12 +212,6 @@ body {
     margin: 0;
 }
 
-/* Container for the cards */
-.row {
-    display: flex;
-    gap: 2rem;
-}
-
 .card {
     margin: 0 auto;
     padding: 2em;
@@ -249,13 +230,8 @@ body {
 }
 
 .card img {
-    width: 100px; /* Set the width of the image */
-    height: 100px; /* Set the height of the image */
-    border-radius: 50%; /* Make the image round */
-    border: 3px solid #fff; /* White border around the image */
-    padding: 5px; /* Add padding around the image */
-    object-fit: cover; /* Ensure the image covers the circle without distortion */
-    margin-bottom: 1rem; /* Space below the image */
+    border: 3px solid #fff;
+    padding: 3px;
 }
 
 @property --angle {
