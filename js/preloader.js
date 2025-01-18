@@ -1,9 +1,15 @@
-// Wait for the DOM to load completely
-document.addEventListener('DOMContentLoaded', () => {
-    // Set a timeout to hide the preloader after 3.5 seconds
-    setTimeout(() => {
-        // Get the preloader element and hide it
-        const preloader = document.getElementById('preloader');
-        if (preloader) preloader.style.display = 'none';  // Hide preloader
-    }, 3500); // 3.5 seconds delay
-});
+     // Simulate data loading
+        const isDataLoaded = true; // Set this to false to simulate data not loaded
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (isDataLoaded) {
+                    const preloader = document.getElementById('preloader');
+                    const content = document.querySelector('.content');
+                    preloader.style.display = 'none'; // Hide preloader
+                    content.style.display = 'block'; // Show main content
+                } else {
+                    console.log("Data not loaded. Keeping preloader visible.");
+                }
+            }, 3000); // 3 seconds delay
+        });
