@@ -214,6 +214,22 @@ footer a:hover {
     padding: 8px 16px;
   }
 }
+/* General styles for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for the cards */
+.row {
+    display: flex;
+    gap: 2rem;
+}
 
 .card {
     margin: 0 auto;
@@ -233,8 +249,13 @@ footer a:hover {
 }
 
 .card img {
-    border: 3px solid #fff;
-    padding: 3px;
+    width: 100px; /* Set the width of the image */
+    height: 100px; /* Set the height of the image */
+    border-radius: 50%; /* Make the image round */
+    border: 3px solid #fff; /* White border around the image */
+    padding: 5px; /* Add padding around the image */
+    object-fit: cover; /* Ensure the image covers the circle without distortion */
+    margin-bottom: 1rem; /* Space below the image */
 }
 
 @property --angle {
