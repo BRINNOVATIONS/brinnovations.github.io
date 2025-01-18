@@ -11,14 +11,13 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-dark text-light">
+
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader-container">
-            <!-- Favicon loader -->
             <div class="loader-image">
-                <img src="https://brinnovations.github.io/images/favicon.png" alt="Loader Image" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="https://brinnovations.github.io/images/favicon.png" alt="Loader Image" class="w-100 h-100" style="object-fit: cover;">
             </div>
-            <!-- Dotted loader -->
             <div class="loading">
                 <div class="loading__dot"></div>
                 <div class="loading__dot"></div>
@@ -28,6 +27,7 @@
             </div>
         </div>
     </div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-relative">
         <div class="container-fluid">
@@ -40,15 +40,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ContactUs.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="PrivacyPolicy.html">PrivacyPolicy</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="PrivacyPolicy.html">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
@@ -59,58 +53,54 @@
     <div class="container text-center mt-5">
         <h1>BRINNOVATIONS is your one-stop destination for website and Android app development solutions. From concept to execution, our expert team specializes in crafting bespoke websites and intuitive Android applications tailored to your unique needs. Partner with us for seamless development, innovative design, and unparalleled customer satisfaction.</h1>
     </div>
-        <!-- Projects -->
-        <div class="col-lg-12 text-center">
-                        <h2>Our Projects</h2>
+
+    <!-- Projects Section -->
+    <section class="projects py-5">
+        <div class="container text-center">
+            <h2>Our Projects</h2>
+            <!-- KidStudy Project -->
+            <div class="app-card">
+                <h2>KidStudy</h2>
+                <p>KidStudy is a smart learning app designed to engage and educate children in a fun and interactive way. With diverse educational content, engaging activities, and customizable learning paths, KidStudy makes learning an exciting adventure for young minds.</p>
+                <a href="KidStudy" class="btn btn-primary">Download</a>
+            </div>
+            <div class="space"></div>
+            <!-- Gameesole Project -->
+            <div class="app-card1">
+                <h2>Gameesole</h2>
+                <p>Gameesole is a mobile app by ZEXXA Innovations, combining gaming with earning opportunities. Users can earn money by playing games, completing tasks, and watching videos, making it a fun and rewarding experience.</p>
+                <a href="https://gameesole.github.io/" class="btn btn-primary">Download</a>
+            </div>
         </div>
-        <section class="projects py-5">
-            <div class="container">
-                <!-- KidStudy Project -->
-                <div class="app-card">
-                    <div class="app-icon"></div>
-                    <h2>KidStudy</h2>
-                    <p>KidStudy is a smart learning app designed to engage and educate children in a fun and interactive way. With its user-friendly interface and diverse educational content, KidStudy stands out as one of the premier applications for kids' learning. From math and language skills to science and art, KidStudy covers a wide range of subjects, catering to various learning styles and interests. With engaging activities, games, and quizzes, children can explore and absorb new concepts effortlessly. Parents can track their child's progress and customize their learning experience to ensure optimal growth and development. With KidStudy, learning becomes an exciting adventure for young minds.</p>
-                    <a href="KidStudy" class="btn">Download</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about py-5 text-white text-center" style="background: url(img/service-bg.svg) no-repeat; background-size: cover;">
+        <div class="container">
+            <h2 class="mb-5">About Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="images/BrajkishorRathod.png" alt="Brajkishor Rathod" class="rounded-circle mb-3" width="100" height="100">
+                        <h3>Brajkishor Rathod</h3>
+                        <p>CEO & Founder of BRINNOVATIONS</p>
+                    </div>
                 </div>
-                <div class="space"></div>
-                <!-- Gameesole Project -->
-                <div class="app-card1">
-                    <div class="app-icon1"></div>
-                    <h2>Gameesole</h2>
-                    <p>Gameesole is a mobile app developed by ZEXXA Innovations that offers users the opportunity to earn money through various activities such as playing games, scratch cards, referring friends, and watching videos. This innovative platform combines entertainment with earning potential, making it an attractive option for those looking to make some extra income while having fun. By engaging in different activities within the Gameesole app, users can accumulate points or rewards that can be converted into real money or gift cards. Gameesole provides a user-friendly interface and a wide range of games and activities to cater to different interests and preferences. With its unique concept of combining gaming with earning opportunities, Gameesole has gained popularity among users seeking a fun and rewarding experience on their mobile devices. Whether you enjoy playing games, testing your luck with scratch cards, or simply watching videos, Gameesole offers a diverse range of options to help you earn money in an engaging and enjoyable way.</p>
-                    <a href="https://gameesole.github.io/" class="btn1">Download</a>
-                </div>
-            </div>
-        </section>
-        <!-- About Section -->
-        <section class="about py-5" id="about" style="background: url(img/service-bg.svg) no-repeat; background-size: cover;">
-    <div class="container text-center">
-        <h2 class="text-white mb-5">About Us</h2>
-        <div class="row justify-content-center">
-            <!-- Card 1 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="images/BrajkishorRathod.png" alt="Brajkishor Rathod" class="rounded-circle mb-3" width="100" height="100">
-                    <h3>Brajkishor Rathod</h3>
-                    <p>CEO & Founder of BRINNOVATIONS</p>
-                </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="images/ShubhamGupta.png" alt="Shubham Gupta" class="rounded-circle mb-3" width="100" height="100">
-                    <h3>Shubham Gupta</h3>
-                    <p>CEO & Founder of ZEXXA Innovations</p>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="images/ShubhamGupta.png" alt="Shubham Gupta" class="rounded-circle mb-3" width="100" height="100">
+                        <h3>Shubham Gupta</h3>
+                        <p>CEO & Founder of ZEXXA Innovations</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-        </section>
-    </main>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-dark text-center text-light py-3 mt-5">
         <div class="container">
-            <p class="mb-0">© 2025 BRINNOVATIONS. Made With ❤️ IN BHARAT 🇮🇳.All rights reserved.</p>
+            <p class="mb-0">© 2025 BRINNOVATIONS. Made With ❤️ IN BHARAT 🇮🇳. All rights reserved.</p>
             <small>Follow us on 
                 <a href="#" class="text-light text-decoration-none">Twitter</a>, 
                 <a href="#" class="text-light text-decoration-none">Facebook</a>, and 
@@ -121,6 +111,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/preloader.js">
+    <script src="js/preloader.js"></script>
 </body>
 </html>
