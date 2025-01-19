@@ -182,20 +182,26 @@
     .btn1 {
       background: linear-gradient(135deg, #F79256, #Dc84ecff);
     }
-
     /* Button Hover Effects */
     .btn:hover, .btn1:hover {
-      background: #006400; /* Darker green */
-      color: #f0f0f0;
-      transform: scale(1.05); /* Slight zoom effect */
+     color: #f0f0f0;
+     transform: scale(1.05); /* Slight zoom effect */
+    }
+
+    .btn:hover {
+     background: linear-gradient(135deg, #4CBB17, #008000); /* Same gradient as .app-card */
+    }
+
+    .btn1:hover {
+    background: linear-gradient(135deg, #F79256, #Dc84ecff); /* Same gradient as .app-card1 */
     }
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .app-card, .app-card1 {
-        padding: 10px;
-      }
-      .btn, .btn1 {
-        padding: 8px 16px;
-      }
-    }
+    .app-card, .app-card1 {
+     padding: 10px;
+   }
+    .btn, .btn1 {
+     padding: 8px 16px;
+   }
+ }
