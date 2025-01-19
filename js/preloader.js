@@ -15,3 +15,10 @@ window.addEventListener('load', () => {
         }
     }, 3000); // 3 seconds delay
 });
+
+
+   // Smooth scroll to About Us section when clicking "About"
+        document.getElementById("aboutButton").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            document.getElementById("about-us").scrollIntoView({ behavior: "smooth" });
+        });
