@@ -1,34 +1,304 @@
-
-<!-- /public/index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>livestream</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+  <title>Navbar and Sections</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
+    /* General Styles for Dark Theme */
     body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
       margin: 0;
+      padding: 0;
     }
 
-    .jwplayer {
-      position: absolute !important;
+    h2 {
+      color: #ffffff;
     }
 
-    .jwplayer.jw-flag-aspect-mode {
-      min-height: 100%;
-      max-height: 100%;
+    /* Navbar Styles */
+    .navbar {
+      position: relative;
+      background-color: #121212;
+    }
+
+    /* Bottom gradient line in navbar */
+    .navbar::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(135deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+      background-size: 300% 300%;
+      animation: gradientAnimation 5s linear infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Card Container */
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 2px; /* Space for the gradient border */
+    }
+
+    .card-inner {
+      background-color: #1e1e1e; /* Dark card background */
+      border-radius: 8px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Align text and content to the left */
+      text-align: left; /* Left-align text */
+    }
+
+    /* Reduce space between name and description */
+    .card-inner h3 {
+      margin-bottom: 5px; /* Reduce margin between name and description */
+    }
+
+    .card-inner p {
+      margin-top: 0; /* Remove top margin for the paragraph */
+      margin-bottom: 0; /* Remove bottom margin for the paragraph */
+    }
+
+    /* Gradient Border */
+    .gradient-border {
+      background: linear-gradient(135deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+      background-size: 300% 300%;
+      animation: border-spin 5s linear infinite;
+    }
+
+    /* Spinning Effect for the Gradient Border */
+    @keyframes border-spin {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Profile Image */
+    .rounded-circle {
+      border: 3px solid #ffffff;
+      border-radius: 50%;
+      align-self: left; /* Center-align the image */
+    }
+
+    /* Add spacing between cards */
+    .mb-5 {
+      margin-bottom: 3rem !important;
+    }
+
+    /* Responsive Text Centering */
+    .text-center {
+      text-align: center;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #222;
+      color: #bbb;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 20px;
+    }
+
+    /* Project styles */
+    .app-card, .app-card1 {
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px; /* Space between cards */
+    }
+
+    /* Specific Card Backgrounds */
+    .app-card {
+      background: linear-gradient(135deg, #4CBB17, #008000);
+    }
+
+    .app-card1 {
+      background: linear-gradient(135deg, #F79256, #Dc84ecff);
+    }
+
+    /* Icon Styles */
+    .app-icon, .app-icon1 {
+      width: 100px;
+      height: 100px;
+      background-size: cover;
+      background-position: center;
+      margin: 0 auto 20px; /* Space below the icon */
+      border-radius: 50%;
+    }
+
+    .app-icon {
+      background-image: url('https://brinnovations.github.io/images/KidStudy.png');
+    }
+
+    .app-icon1 {
+      background-image: url('https://brinnovations.github.io/images/Gameesole.png');
+    }
+
+    /* Headings */
+    .app-card h2, .app-card1 h2 {
+      margin-bottom: 15px; /* Space below the heading */
+    }
+
+    /* Button Styles */
+    .btn, .btn1 {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #FFFFFF;
+      border: 2px solid #FFFFFF;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-top: 15px; /* Space above the button */
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #4CBB17, #008000);
+    }
+
+    .btn1 {
+      background: linear-gradient(135deg, #F79256, #Dc84ecff);
+    }
+
+    /* Button Hover Effects */
+    .btn:hover, .btn1:hover {
+      background: #006400; /* Darker green */
+      color: #f0f0f0;
+      transform: scale(1.05); /* Slight zoom effect */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .app-card, .app-card1 {
+        padding: 10px;
+      }
+      .btn, .btn1 {
+        padding: 8px 16px;
+      }
     }
   </style>
-    
 </head>
 <body>
-  <div id="jwplayerDiv" style="display: none;"></div>
 
-  <script src="api.js"></script>
- 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Brand Logo and Name -->
+      <a class="navbar-brand" href="#">
+        <img src="https://via.placeholder.com/30" alt="Logo" width="30" height="30">
+        <span>BrandName</span>
+      </a>
+      <!-- Navbar Toggler -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects Section -->
+  <section class="projects py-5">
+    <div class="container text-center">
+      <h2>Our Projects</h2>
+      <!-- KidStudy Project -->
+      <div class="app-card">
+        <h2>KidStudy</h2>
+        <p>KidStudy is a smart learning app designed to engage and educate children in a fun and interactive way. With diverse educational content, engaging activities, and customizable learning paths, KidStudy makes learning an exciting adventure for young minds.</p>
+        <a href="" class="btn btn-primary">Download</a>
+      </div>
+      <div class="space"></div>
+      <!-- Gameesole Project -->
+      <div class="app-card1">
+        <h2>Gameesole</h2>
+        <p>Gameesole is a mobile app by ZEXXA Innovations, combining gaming with earning opportunities. Users can earn money by playing games, completing tasks, and watching videos, making it a fun and rewarding experience.</p>
+        <a href="" class="btn1 btn-primary">Download</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about py-5" id="about">
+    <div class="container">
+      <h2 class="text-light mb-5 text-center">About Us</h2>
+      <div class="row justify-content-center">
+        <!-- Gradient Border Card 1 -->
+        <div class="col-lg-4 col-md-6 mb-5">
+          <div class="card gradient-border">
+            <div class="card-inner">
+              <img src="images/BrajkishorRathod.png" alt="Brajkishor Rathod" class="rounded-circle mb-3" width="100" height="100">
+              <h3 class="text-light">Brajkishor Rathod</h3>
+              <p class="text-light">CEO & Founder of BRINNOVATIONS</p>
+            </div>
+          </div>
+        </div>
+        <!-- Gradient Border Card 2 -->
+        <div class="col-lg-4 col-md-6 mb-5">
+          <div class="card gradient-border">
+            <div class="card-inner">
+              <img src="images/ShubhamGupta.png" alt="Shubham Gupta" class="rounded-circle mb-3" width="100" height="100">
+              <h3 class="text-light">Shubham Gupta</h3>
+              <p class="text-light">CEO & Founder of ZEXXA Innovations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+  </html>
