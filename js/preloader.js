@@ -1,4 +1,4 @@
-     // Simulate data loading
+      // Simulate data loading
         const isDataLoaded = true; // Set this to false to simulate data not loaded
 
         window.addEventListener('load', () => {
