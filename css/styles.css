@@ -1,193 +1,201 @@
-/* General Styles for Dark Theme */
-body {
-  background-color: #121212;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+   /* General Styles for Dark Theme */
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-h2 {
-  color: #ffffff;
-}
+    h2 {
+      color: #ffffff;
+    }
 
-/* Navbar Styles */
-.navbar {
-  position: relative;
-  background-color: #121212;
-}
+    /* Navbar Styles */
+    .navbar {
+      position: relative;
+      background-color: #121212;
+    }
 
-/* Bottom gradient line in navbar */
-.navbar::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(135deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
-  background-size: 300% 300%;
-  animation: gradientAnimation 5s linear infinite;
-}
+    /* Bottom gradient line in navbar */
+    .navbar::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(135deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+      background-size: 300% 300%;
+      animation: gradientAnimation 5s linear infinite;
+    }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-/* Card Container */
-.card {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  border-radius: 10px;
-  overflow: hidden;
-  padding: 2px; /* Space for the gradient border */
-}
+    /* Card Container */
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 2px; /* Space for the gradient border */
+    }
 
-.card-inner {
-  background-color: #1e1e1e; /* Dark card background */
-  border-radius: 8px;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align text and content to the left */
-  text-align: left; /* Left-align text */
-}
+    .card-inner {
+      background-color: #1e1e1e; /* Dark card background */
+      border-radius: 8px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Align text and content to the left */
+      text-align: left; /* Left-align text */
+    }
 
-/* Reduce space between name and description */
-.card-inner h3 {
-  margin-bottom: 5px; /* Reduce margin between name and description */
-}
+    /* Reduce space between name and description */
+    .card-inner h3 {
+      margin-bottom: 5px; /* Reduce margin between name and description */
+    }
 
-.card-inner p {
-  margin-top: 0; /* Remove top margin for the paragraph */
-  margin-bottom: 0; /* Remove bottom margin for the paragraph */
-}
+    .card-inner p {
+      margin-top: 0; /* Remove top margin for the paragraph */
+      margin-bottom: 0; /* Remove bottom margin for the paragraph */
+    }
 
-/* Gradient Border */
-.gradient-border {
-  background: linear-gradient(135deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
-  background-size: 300% 300%;
-  animation: border-spin 5s linear infinite;
-}
+    /* Gradient Border */
+    .gradient-border {
+      background: linear-gradient(135deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+      background-size: 300% 300%;
+      animation: border-spin 5s linear infinite;
+    }
 
-/* Spinning Effect for the Gradient Border */
-@keyframes border-spin {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+    /* Spinning Effect for the Gradient Border */
+    @keyframes border-spin {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-/* Profile Image */
-.rounded-circle {
-  border: 3px solid #ffffff;
-  border-radius: 50%;
-  align-self: left; /* Center-align the image */
-}
+    /* Profile Image */
+    .rounded-circle {
+      border: 3px solid #ffffff;
+      border-radius: 50%;
+      align-self: left; /* Center-align the image */
+    }
 
-.mb-5 {
-  margin-bottom: 3rem !important;
-}
+    /* Add spacing between cards */
+    .mb-5 {
+      margin-bottom: 3rem !important;
+    }
 
-.text-center {
-  text-align: center;
-}
+    /* Responsive Text Centering */
+    .text-center {
+      text-align: center;
+    }
 
-/* Footer Styles */
-footer {
-  background-color: #222;
-  color: #bbb;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 20px;
-}
+    /* Footer Styles */
+    footer {
+      background-color: #222;
+      color: #bbb;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 20px;
+    }
 
-/* Project styles */
-.app-card, .app-card1 {
-  width: auto;
-  height: auto;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  text-align: center;
-  margin-bottom: 20px;
-}
+    /* Project styles */
+    .app-card, .app-card1 {
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px; /* Space between cards */
+    }
 
-.app-card {
-  background: linear-gradient(135deg, #4CBB17, #008000);
-}
+    /* Specific Card Backgrounds */
+    .app-card {
+      background: linear-gradient(135deg, #4CBB17, #008000);
+    }
 
-.app-card1 {
-  background: linear-gradient(135deg, #F79256, #Dc84ecff);
-}
+    .app-card1 {
+      background: linear-gradient(135deg, #F79256, #Dc84ecff);
+    }
 
-.app-icon, .app-icon1 {
-  width: 100px;
-  height: 100px;
-  background-size: cover;
-  background-position: center;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-}
+    /* Icon Styles */
+    .app-icon, .app-icon1 {
+      width: 100px;
+      height: 100px;
+      background-size: cover;
+      background-position: center;
+      margin: 0 auto 20px; /* Space below the icon */
+      border-radius: 50%;
+    }
 
-.app-icon {
-  background-image: url('https://brinnovations.github.io/images/KidStudy.png');
-}
+    .app-icon {
+      background-image: url('https://brinnovations.github.io/images/KidStudy.png');
+    }
 
-.app-icon1 {
-  background-image: url('https://brinnovations.github.io/images/Gameesole.png');
-}
+    .app-icon1 {
+      background-image: url('https://brinnovations.github.io/images/Gameesole.png');
+    }
 
-.app-card h2, .app-card1 h2 {
-  margin-bottom: 15px;
-}
+    /* Headings */
+    .app-card h2, .app-card1 h2 {
+      margin-bottom: 15px; /* Space below the heading */
+    }
 
-.btn, .btn1 {
-  display: inline-block;
-  padding: 10px 20px;
-  color: #FFFFFF;
-  border: 2px solid #FFFFFF;
-  border-radius: 2px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 15px;
-}
+    /* Button Styles */
+    .btn, .btn1 {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #FFFFFF;
+      border: 2px solid #FFFFFF;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-top: 15px; /* Space above the button */
+    }
 
-.btn {
-  background: linear-gradient(135deg, #4CBB17, #008000);
-}
+    .btn {
+      background: linear-gradient(135deg, #4CBB17, #008000);
+    }
 
-.btn1 {
-  background: linear-gradient(135deg, #F79256, #Dc84ecff);
-}
+    .btn1 {
+      background: linear-gradient(135deg, #F79256, #Dc84ecff);
+    }
 
-.btn:hover, .btn1:hover {
-  background: #006400;
-  color: #f0f0f0;
-  transform: scale(1.05);
-}
+    /* Button Hover Effects */
+    .btn:hover, .btn1:hover {
+      background: #006400; /* Darker green */
+      color: #f0f0f0;
+      transform: scale(1.05); /* Slight zoom effect */
+    }
 
-@media (max-width: 768px) {
-  .app-card, .app-card1 {
-    padding: 10px;
-  }
-  .btn, .btn1 {
-    padding: 8px 16px;
-  }
-}
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .app-card, .app-card1 {
+        padding: 10px;
+      }
+      .btn, .btn1 {
+        padding: 8px 16px;
+      }
+    }
