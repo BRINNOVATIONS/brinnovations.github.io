@@ -286,3 +286,53 @@
 .content {
   display: none;
 }
+  /* Flexbox container to align buttons horizontally */
+  .button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+  }
+
+  /* Gmail Button */
+  .gmail-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(45deg, #ff0000, #d93025); /* Gradient Red */
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .gmail-button i {
+    margin-right: 8px;
+  }
+  .gmail-button:hover {
+    background: linear-gradient(45deg, #c1271f, #ff4c4c); /* Darker Red on hover */
+  }
+
+  /* Telegram Button */
+  .telegram-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(45deg, #0088cc, #00aaff); /* Gradient Blue */
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .telegram-button i {
+    margin-right: 8px;
+  }
+  .telegram-button:hover {
+    background: linear-gradient(45deg, #007ab8, #0099cc); /* Darker Blue on hover */
+  }
