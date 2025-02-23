@@ -1,39 +1,27 @@
-<script type='text/javascript' src='https://content.jwplatform.com/libraries/IDzF9Zmk.js'></script>
-
-<div id="jwplayerDiv"></div>  
-
-<script> 
-
-jwplayer("jwplayerDiv").setup({
-
-    //playlist: [{
-
-                  aspectratio: "16:9",
-
-        width: '100%',
-
-        aspectratio: '16:9',
-
-        stretching: 'exactfit',
-
-           autostart: true,
-
-        file: "https://linearjitp-playback.astro.com.my/dash-wv/linear/2504/default_ott.mpd",   
-
-      type: "dash",   
-
-      drm: { "clearkey": {   
-
-              "keyId": "03c2e0af2f8159f9f0ce9b5dbc865f10",   
-
-             "key": "cd84ed136b0cc71f8ab8cd4d4f6a2e4c"   
-
-            }   
-
-       }
-
-   // }]
-
-});
-
-</script>
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
+    <title>AstroCricket</title>
+</head>
+<body>
+    <div id="jwplayerDiv"></div>
+    <script>
+        jwplayer("jwplayerDiv").setup({
+            width: "100%",
+            aspectratio: "16:9",
+            stretching: "exactfit",
+            autostart: true,
+            file: "https://linearjitp-playback.astro.com.my/dash-wv/linear/2504/default_ott.mpd",
+            type: "dash",
+            drm: {
+                clearkey: {
+                    keyId: "03c2e0af2f8159f9f0ce9b5dbc865f10",
+                    key: "cd84ed136b0cc71f8ab8cd4d4f6a2e4c"
+                }
+            }
+        });
+    </script>
+</body>
+</html>
