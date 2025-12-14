@@ -21,7 +21,7 @@ html, body {
 
 div[data-shaka-player-container] {
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 video {
@@ -88,9 +88,10 @@ async function init() {
         controlPanelElements: [
             'play_pause',
             'time_and_duration',
-            'spacer',
             'mute',
             'volume',
+            'spacer',
+            'picture_in_picture',
             'playback_rate',
             'quality',
             'fullscreen'
