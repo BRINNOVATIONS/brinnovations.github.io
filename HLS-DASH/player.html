@@ -1,124 +1,148 @@
+<!DOCTYPE html>
 <html>
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.8.1/dist/shaka-player.ui.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@4.8.1/dist/controls.min.css">
+
 <style>
-    body {
-        width:100%;
-        height: 100%;
-        font-family: Poppins;
-        display:block;
-        position: absolute;
-        padding: 0px;
-        margin: 0px;
-        background: #fff;
-    }
-    video{
-        width:100%;
-        height: 100%;
-        display:inline-block;
-        -webkit-user-select:none;
-        -moz-user-select:none;
-        -ms-user-select:none;
-        user-select:none;
-    }
-    a, a:hover, a:focus, a:active {
-        text-decoration: none;
-    }
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    font-family: Poppins, sans-serif;
+    overflow: hidden;
+}
+
+div[data-shaka-player-container] {
+    width: 100%;
+    height: 100vh;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* VIDEO STRETCH */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #000;
+}
+
+/* Optional watermark */
+body::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 110px;
+    height: 70px;
+    opacity: 0.35;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 10;
+}
 </style>
-<style>
-    div a img{visibility:hidden;}
-    body::before {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        z-index: 10;
-        content: '';
-        height: 70px;
-        width: 110px;
-        background: url(' ') no-repeat;
-        background-size: 110px auto, auto;
-        opacity: 0.4;
-    }
-</style>
+
 </head>
+
 <body>
-<center>   
-    <div data-shaka-player-container style="max-width:100em" data-shaka-player-cast-receiver-id="1BA79154">
-        <!-- The data-shaka-player tag will make the UI library use this video element.
-            If no video is provided, the UI will automatically make one inside the container div. -->
-        <video autoplay data-shaka-player id="video" poster="" style="width:100%;height:100%"></video>
-    </div>
-</center>
+
+<div data-shaka-player-container data-shaka-player-cast-receiver-id="1BA79154">
+    <video
+        id="video"
+        autoplay
+        muted
+        playsinline
+        data-shaka-player>
+    </video>
+</div>
+
 <script>
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const manifestUri = urlParams.get('url') || '';
-const keyId = urlParams.get('keyId') || '';
-const key = urlParams.get('key') || '';
+const params = new URLSearchParams(window.location.search);
+const manifestUri = params.get('url') || '';
+const keyId = params.get('keyId') || '';
+const key = params.get('key') || '';
 
 async function init() {
-    // When using the UI, the player is made automatically by the UI object.
+
+    if (!manifestUri) {
+        console.error('Manifest URL missing');
+        return;
+    }
+
     const video = document.getElementById('video');
-    const ui = video['ui'];
+    const ui = video.ui;
     const controls = ui.getControls();
     const player = controls.getPlayer();
-    const config = {
-        'controlPanelElements': ['play_pause', 'time_and_duration', 'spacer', 'mute', 'picture_in_picture', 'playback_rate', 'quality', 'fullscreen'],
-        'playbackRates': [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2],
-    }
-    ui.configure(config);
+
+    /* UI CONFIG */
+    ui.configure({
+        controlPanelElements: [
+            'play_pause',
+            'time_and_duration',
+            'spacer',
+            'mute',
+            'volume',
+            'playback_rate',
+            'quality',
+            'fullscreen'
+        ],
+        playbackRates: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2]
+    });
+
+    /* PLAYER CONFIG */
     player.configure({
+        streaming: {
+            rebufferingGoal: 2,
+            bufferingGoal: 15,
+            lowLatencyMode: false
+        },
         drm: {
-            clearKeys: {
-                [keyId]: key,
-            }
+            clearKeys: keyId && key ? {
+                [keyId]: key
+            } : {}
         }
     });
 
-    // Attach player and ui to the window to make it easy to access in the JS console.
-    window.player = player;
-    window.ui = ui;
-    // Listen for error events.
+    /* ERROR HANDLING */
     player.addEventListener('error', onPlayerErrorEvent);
     controls.addEventListener('error', onUIErrorEvent);
-    // Try to load a manifest.
-    // This is an asynchronous process.
+
     try {
         await player.load(manifestUri);
-        // This runs if the asynchronous load is successful.
-        console.log('The video has now been loaded!');
+        console.log('Video loaded successfully');
     } catch (error) {
         onPlayerError(error);
     }
 }
 
 function onPlayerErrorEvent(errorEvent) {
-    // Extract the shaka.util.Error object from the event.
-    onPlayerError(event.detail);
-}
-
-function onPlayerError(error) {
-    // Handle player error
-    console.error('Error code', error.code, 'object', error);
+    onPlayerError(errorEvent.detail);
 }
 
 function onUIErrorEvent(errorEvent) {
-    // Extract the shaka.util.Error object from the event.
-    onPlayerError(event.detail);
+    onPlayerError(errorEvent.detail);
 }
 
-function initFailed(errorEvent) {
-    // Handle the failure to load; errorEvent.detail.reasonCode has a
-    // shaka.ui.FailReasonCode describing why.
-    console.error('Unable to load the UI library!');
+function onPlayerError(error) {
+    console.error('Shaka Error', error.code, error);
 }
 
-// Listen to the custom shaka-ui-loaded event, to wait until the UI is loaded.
+function initFailed() {
+    console.error('Shaka UI failed to load');
+}
+
 document.addEventListener('shaka-ui-loaded', init);
-// Listen to the custom shaka-ui-load-failed event, in case Shaka Player fails
-// to load (e.g. due to lack of browser support).
 document.addEventListener('shaka-ui-load-failed', initFailed);
 </script>
+
 </body>
 </html>
