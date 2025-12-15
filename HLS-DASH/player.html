@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,20 +18,36 @@ html, body {
     overflow: hidden;
 }
 
+/* Player container */
 div[data-shaka-player-container] {
     width: 100%;
     height: 28vh;
+    position: relative;
 }
 
+/* Video */
 video {
     width: 100%;
     height: 100%;
-    object-fit: fill;
-    background: #fff;
+    object-fit: fill; /* VIDEO STRETCH */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
+    background: #fff;
+}
+
+/* Watermark image */
+.watermark {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 110px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 10;
 }
 </style>
-
 </head>
 
 <body>
@@ -45,17 +60,16 @@ video {
         playsinline
         data-shaka-player>
     </video>
+
+    <!-- Watermark -->
+    <img src="images/Header.png" class="watermark" alt="watermark">
 </div>
 
 <script>
 const params = new URLSearchParams(window.location.search);
-
 const manifestUri = params.get('url') || '';
-const keyId       = params.get('keyId') || '';
-const key         = params.get('key') || '';
-const cookieValue = params.get('cookie') || '';
-const originValue = params.get('origin') || '';
-const refererValue = params.get('referer') || '';
+const keyId = params.get('keyId') || '';
+const key = params.get('key') || '';
 
 async function init() {
 
@@ -96,21 +110,6 @@ async function init() {
             clearKeys: keyId && key ? {
                 [keyId]: key
             } : {}
-        }
-    });
-
-    /* NETWORK REQUEST HEADERS */
-    const netEngine = player.getNetworkingEngine();
-
-    netEngine.registerRequestFilter((type, request) => {
-        if (cookieValue) {
-            request.headers['Cookie'] = cookieValue;
-        }
-        if (originValue) {
-            request.headers['Origin'] = originValue;
-        }
-        if (refererValue) {
-            request.headers['Referer'] = refererValue;
         }
     });
 
