@@ -27,27 +27,9 @@ div[data-shaka-player-container] {
 video {
     width: 100%;
     height: 100%;
-    object-fit: fill; /* VIDEO STRETCH */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    object-fit: fill;
     background: #fff;
-}
-
-/* Optional watermark */
-body::before {
-    content: '';
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    width: 110px;
-    height: 70px;
-    opacity: 0.35;
-    background-size: contain;
-    background-repeat: no-repeat;
-    pointer-events: none;
-    z-index: 10;
+    user-select: none;
 }
 </style>
 
@@ -67,9 +49,13 @@ body::before {
 
 <script>
 const params = new URLSearchParams(window.location.search);
+
 const manifestUri = params.get('url') || '';
-const keyId = params.get('keyId') || '';
-const key = params.get('key') || '';
+const keyId       = params.get('keyId') || '';
+const key         = params.get('key') || '';
+const cookieValue = params.get('cookie') || '';
+const originValue = params.get('origin') || '';
+const refererValue = params.get('referer') || '';
 
 async function init() {
 
@@ -110,6 +96,21 @@ async function init() {
             clearKeys: keyId && key ? {
                 [keyId]: key
             } : {}
+        }
+    });
+
+    /* NETWORK REQUEST HEADERS */
+    const netEngine = player.getNetworkingEngine();
+
+    netEngine.registerRequestFilter((type, request) => {
+        if (cookieValue) {
+            request.headers['Cookie'] = cookieValue;
+        }
+        if (originValue) {
+            request.headers['Origin'] = originValue;
+        }
+        if (refererValue) {
+            request.headers['Referer'] = refererValue;
         }
     });
 
